@@ -1,6 +1,207 @@
-@import "variables";
-@import "mixins";
-@import "functions";
-@import "base";
-@import "buttons";
-@import "nav";
+@charset "UTF-8";
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.dark-mode {
+  background-color: #1E1E2F;
+  color: #E0E0E0;
+}
+.dark-mode .navbar {
+  background-color: #2D3035;
+}
+.dark-mode .dropdown-menu {
+  background-color: #161719;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #4ECDC4;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: #2D3035;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-danger {
+  background-color: #FF6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1A2B5C;
+  color: white;
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4ECDC4;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+.navbar .nav-links a:hover {
+  color: #4ECDC4;
+}
+.navbar .nav-links .dropdown {
+  position: relative;
+}
+.navbar .nav-links .dropdown > a {
+  position: relative;
+  padding-right: 1.5rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+.navbar .nav-links .dropdown > a::after {
+  content: "▾";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+.navbar .nav-links .dropdown > a:hover {
+  color: #4ECDC4;
+}
+.navbar .nav-links .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.navbar .nav-links .dropdown:hover > a::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.navbar .nav-links .dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #F5F7FA;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.navbar .nav-links .dropdown .dropdown-menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2D3035;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.navbar .nav-links .dropdown .dropdown-menu li a:hover {
+  background-color: #4ECDC4;
+  color: white;
+}
+.navbar .nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.navbar .menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar .nav-links {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    background-color: #2D3035;
+  }
+  .navbar .nav-links.active {
+    display: flex;
+  }
+  .navbar .nav-links .dropdown {
+    width: 100%;
+  }
+  .navbar .nav-links .dropdown .dropdown-menu {
+    position: static;
+    background-color: #444951;
+  }
+  .navbar .menu-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */
