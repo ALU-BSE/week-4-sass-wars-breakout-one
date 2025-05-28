@@ -1,1 +1,31 @@
+%button-reset {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.btn {
+  @extend %button-reset;
+}
+
+.btn-primary {
+  @include btn-style($color-sky, $color-white);
+}
+
+.btn-secondary {
+  @include btn-style($color-charcoal, $color-white);
+}
+
+.btn-danger {
+  @include btn-style($color-coral, $color-white);
+}
+
+@include mobile {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
