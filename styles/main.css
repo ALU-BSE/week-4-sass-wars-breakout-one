@@ -1,3 +1,14 @@
-
+nav ul {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+}
+nav li {
+  display: flex;
+}
+nav a {
+  text-decoration: none;
+  color: #000001;
+}
 
 /*# sourceMappingURL=main.css.map */
