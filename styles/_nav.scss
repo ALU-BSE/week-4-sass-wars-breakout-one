@@ -1,0 +1,136 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-navy;
+  color: white;
+  padding: map-get($spacing-scale, md) 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  @include fade-in(0.2s);
+
+  .logo {
+    font-size: map-get($font-sizes, large);
+    font-weight: bold;
+    color: $color-sky;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: map-get($spacing-scale, lg);
+
+    a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-sky;
+      }
+    }
+
+    // Dropdown styles
+    .dropdown {
+      position: relative;
+
+      > a {
+        position: relative;
+        padding-right: 1.5rem;
+        display: block;
+        transition: color 0.3s ease;
+
+        &::after {
+          content: '▾';
+          position: absolute;
+          right: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $color-sky;
+        }
+      }
+
+      &:hover > .dropdown-menu {
+        display: block;
+      }
+
+      &:hover > a::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $color-light-gray;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 160px;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+
+        li {
+          a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: $color-charcoal;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: $color-sky;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: map-get($spacing-scale, md);
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav-links {
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      background-color: $color-charcoal;
+
+      &.active {
+        display: flex;
+      }
+
+      .dropdown {
+        width: 100%;
+
+        .dropdown-menu {
+          position: static;
+          background-color: lighten($color-charcoal, 10%);
+        }
+      }
+    }
+
+    .menu-toggle {
+      display: block;
+      margin-top: map-get($spacing-scale, sm);
+    }
+  }
+}
