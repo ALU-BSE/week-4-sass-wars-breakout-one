@@ -1,0 +1,31 @@
+// Colors
+$color-navy: #1A2B5C;
+$color-sky: #4ECDC4;
+$color-charcoal: #2D3035;
+$color-coral: #FF6B6B;
+$color-light-gray: #F5F7FA;
+$color-white: #FFFFFF;
+$color-dark-bg: #1E1E2F;
+$color-dark-text: #E0E0E0;
+
+// Typography
+$font-primary: 'Poppins', sans-serif;
+$font-code: 'Courier New', monospace;
+
+$font-sizes: (
+  smallest: 0.8rem,
+  small: 0.9rem,
+  base: 1rem,
+  medium: 1.2rem,
+  large: 1.5rem,
+  xlarge: 2rem
+);
+
+// Spacing scale
+$spacing-scale: (
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2rem
+);
