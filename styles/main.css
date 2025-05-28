@@ -4,7 +4,7 @@ nav ul {
   list-style: none;
 }
 nav li {
-  display: flex;
+  display: inline-block;
 }
 nav a {
   text-decoration: none;
