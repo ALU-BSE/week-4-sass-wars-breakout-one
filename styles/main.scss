@@ -1,0 +1,17 @@
+$primary-color: #000001;
+$font-stack: monospace;
+
+nav{
+    ul{
+        margin: 0;
+        padding: 1rem;
+        list-style: none;
+    }
+
+    li{display: flex;
+    }
+    a {
+        text-decoration: none;
+        color:$primary-color
+    }
+}
