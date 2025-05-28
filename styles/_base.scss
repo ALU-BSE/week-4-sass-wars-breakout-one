@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: map-get($font-sizes, base);
+  background-color: white;
+  color: black;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.dark-mode {
+  background-color: $color-dark-bg;
+  color: $color-dark-text;
+
+  .navbar {
+    background-color: $color-charcoal;
+  }
+
+  .dropdown-menu {
+    background-color: darken($color-charcoal, 10%);
+  }
+}
